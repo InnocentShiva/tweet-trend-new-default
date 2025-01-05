@@ -1,4 +1,4 @@
-# Ttrend application
+# Ttrend application for practise of multibranch pipeline
 
 This is a small applicaiton which contains main and test folders.  
 Main contains application code.  
