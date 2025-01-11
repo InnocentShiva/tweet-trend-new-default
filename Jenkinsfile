@@ -18,6 +18,14 @@ environment {
 	    }
 	  }
 
+        stage("test") {
+            steps{
+                echo "-------------------- unit test started -------------"
+                sh 'mvn surefire-report:report'
+                echo "-------------------- unit test completed -----------"
+            }
+        }
+
     // stage('SonarQube analysis') {
     // environment {
     //     scannerHome = tool 'akshat-sonar-scanner'
@@ -97,7 +105,7 @@ environment {
         steps {
             script {
                 echo '<----------------- Helm Deploy Started ------------>'
-                sh 'helm install ttrend ttrend-o.1.0.tgz'
+                sh 'helm install ttrend ttrend-0.1.0.tgz'
                 echo '<----------------- Helm deploy Ends ------------>'
             }
         }
